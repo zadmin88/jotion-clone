@@ -27,7 +27,7 @@ import { api } from "@/convex/_generated/api";
 
 import { UserItem } from "./user-item";
 import { Item } from "./item";
-// import { DocumentList } from "./document-list";
+import { DocumentList } from "./document-list";
 // import { TrashBox } from "./trash-box";
 // import { Navbar } from "./navbar";
 
@@ -170,10 +170,9 @@ export const Navigation = () => {
           <Item onClick={handleCreate} label="New page" icon={PlusCircle} />
         </div>
 
-        {/* 
         <div className="mt-4">
           <DocumentList />
-          <Item onClick={handleCreate} icon={Plus} label="Add a page" />
+          {/* <Item onClick={handleCreate} icon={Plus} label="Add a page" />
           <Popover>
             <PopoverTrigger className="w-full mt-4">
               <Item label="Trash" icon={Trash} />
@@ -184,8 +183,8 @@ export const Navigation = () => {
             >
               <TrashBox />
             </PopoverContent>
-          </Popover>
-        </div> */}
+          </Popover> */}
+        </div>
 
         <div
           onMouseDown={handleMouseDown}

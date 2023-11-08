@@ -70,12 +70,12 @@ export const Item = ({
   //     });
   //   };
 
-  //   const handleExpand = (
-  //     event: React.MouseEvent<HTMLDivElement, MouseEvent>
-  //   ) => {
-  //     event.stopPropagation();
-  //     onExpand?.();
-  //   };
+  const handleExpand = (
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) => {
+    event.stopPropagation();
+    onExpand?.();
+  };
 
   const onCreate = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     event.stopPropagation();
@@ -114,7 +114,7 @@ export const Item = ({
         <div
           role="button"
           className="h-full rounded-sm hover:bg-neutral-300 dark:hover:bg-neutral-600 mr-1"
-          //   onClick={handleExpand}
+          onClick={handleExpand}
         >
           <ChevronIcon className="h-4 w-4 shrink-0 text-muted-foreground/50" />
         </div>
@@ -130,9 +130,9 @@ export const Item = ({
           <span className="text-xs">⌘</span>K
         </kbd>
       )}
-      {/* {!!id && (
+      {!!id && (
         <div className="ml-auto flex items-center gap-x-2">
-          <DropdownMenu>
+          {/* <DropdownMenu>
             <DropdownMenuTrigger onClick={(e) => e.stopPropagation()} asChild>
               <div
                 role="button"
@@ -156,7 +156,7 @@ export const Item = ({
                 Last edited by: {user?.fullName}
               </div>
             </DropdownMenuContent>
-          </DropdownMenu>
+          </DropdownMenu> */}
           <div
             role="button"
             onClick={onCreate}
@@ -165,21 +165,21 @@ export const Item = ({
             <Plus className="h-4 w-4 text-muted-foreground" />
           </div>
         </div>
-      )} */}
+      )}
     </div>
   );
 };
 
-// Item.Skeleton = function ItemSkeleton({ level }: { level?: number }) {
-//   return (
-//     <div
-//       style={{
-//         paddingLeft: level ? `${level * 12 + 25}px` : "12px",
-//       }}
-//       className="flex gap-x-2 py-[3px]"
-//     >
-//       <Skeleton className="h-4 w-4" />
-//       <Skeleton className="h-4 w-[30%]" />
-//     </div>
-//   );
-// };
+Item.Skeleton = function ItemSkeleton({ level }: { level?: number }) {
+  return (
+    <div
+      style={{
+        paddingLeft: level ? `${level * 12 + 25}px` : "12px",
+      }}
+      className="flex gap-x-2 py-[3px]"
+    >
+      <Skeleton className="h-4 w-4" />
+      <Skeleton className="h-4 w-[30%]" />
+    </div>
+  );
+};
