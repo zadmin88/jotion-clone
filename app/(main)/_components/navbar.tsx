@@ -8,8 +8,8 @@ import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
 
 import { Title } from "./title";
-// import { Banner } from "./banner";
-// import { Menu } from "./menu";
+import { Banner } from "./banner";
+import { Menu } from "./menu";
 // import { Publish } from "./publish";
 
 interface NavbarProps {
@@ -28,9 +28,9 @@ export const Navbar = ({ isCollapsed, onResetWidth }: NavbarProps) => {
     return (
       <nav className="bg-background dark:bg-[#1F1F1F] px-3 py-2 w-full flex items-center justify-between">
         <Title.Skeleton />
-        {/* <div className="flex items-center gap-x-2">
-            <Menu.Skeleton />
-          </div> */}
+        <div className="flex items-center gap-x-2">
+          <Menu.Skeleton />
+        </div>
       </nav>
     );
   }
@@ -52,14 +52,12 @@ export const Navbar = ({ isCollapsed, onResetWidth }: NavbarProps) => {
         <div className="flex items-center justify-between w-full">
           <Title initialData={document} />
           <div className="flex items-center gap-x-2">
-            {/* <Publish initialData={document} />
-            <Menu documentId={document._id} /> */}
+            {/* <Publish initialData={document} /> */}
+            <Menu documentId={document._id} />
           </div>
         </div>
       </nav>
-      {/* {document.isArchived && (
-        <Banner documentId={document._id} />
-      )} */}
+      {document.isArchived && <Banner documentId={document._id} />}
     </>
   );
 };
